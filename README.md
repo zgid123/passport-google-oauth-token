@@ -23,7 +23,7 @@ unobtrusively integrated into any application or framework that supports
 The Google authentication strategy authenticates users using a Google
 account and OAuth 2.0 tokens.  The strategy requires a `verify` callback, which
 accepts these credentials and calls `cb` providing a user, as well as
-`options` specifying a app ID and app secret.
+`options` specifying an app ID and app secret.
 
 ```js
 const GoogleOauthTokenStrategy = require('passport-google-oauth-token');
