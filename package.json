@@ -10,11 +10,17 @@
     "authentication",
     "identity"
   ],
-  "main": "./src",
+  "main": "lib/index.js",
   "scripts": {
+    "compile": "babel src --out-dir lib",
+    "prepublish": "npm run compile",
     "test": "mocha --compilers js:babel-core/register test"
   },
   "author": "Alpha",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zgid123/passport-google-oauth-token.git"
+  },
   "license": "MIT",
   "dependencies": {
     "passport-oauth2": "1.x.x"
