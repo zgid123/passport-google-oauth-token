@@ -54,8 +54,48 @@ app.post('/auth/google/token',
 
 ### Client Requests
 
-Clients can send requests to routes that use passport-google-oauth-token authentication using query parms, body, or HTTP headers. Clients will need to transmit the `access_token`
+Clients can send requests to routes that use passport-google-oauth-token authentication using `query parms`, `body`, or `HTTP headers`. Clients will need to transmit the `access_token`
 and optionally the `refresh_token` that are received from google after login.
+
+## Options
+
+| Field              | Description                       | Default Value                                 |
+| ------------------ | --------------------------------- | --------------------------------------------- |
+| clientID           | Google's client id                |                                               |
+| clientSecret       | Google's client secret            |                                               |
+| tokenURL           | Google's oauth2 token url         | https://www.googleapis.com/oauth2/v4/token    |
+| profileURL         | Google's scope profile url        | https://www.googleapis.com/oauth2/v3/userinfo |
+| authorizationURL   | Google's oauth2 authorization url | https://accounts.google.com/o/oauth2/v2/auth  |
+| tokenURLVersion    | Version of token url              | v4                                            |
+| userinfoURLVersion | Version of profile url            | v3                                            |
+| authURLVersion     | Version of authorization url      | v2                                            |
+
+## Profile Example
+
+```js
+{
+  provider: 'google',
+  id: '1234',
+  displayName: 'Alpha',
+  name: {
+    familyName: 'Lucifer',
+    givenName: 'Alpha',
+  },
+  emails: [
+    {
+      value: 'alphanolucifer@gmail.com',
+      verified: true,
+    },
+  ],
+  photos: [
+    {
+      value: 'https://google.com',
+    },
+  ],
+  _json: {},
+  _raw: {},
+}
+```
 
 ## License
 

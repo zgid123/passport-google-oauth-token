@@ -1,6 +1,6 @@
 {
   "name": "passport-google-oauth-token",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Google access token authentication strategy for Passport",
   "keywords": [
     "passport",
@@ -12,7 +12,7 @@
   ],
   "main": "lib/index.js",
   "scripts": {
-    "compile": "rm -rf lib && babel src --out-dir lib",
+    "compile": "rm -rf lib && babel src --out-dir lib && cp types/index.d.ts lib",
     "prepublish": "npm run compile",
     "test": "mocha --require babel-core/register test"
   },
@@ -26,6 +26,10 @@
     "passport-oauth2": "^1.5.0"
   },
   "devDependencies": {
+    "@types/express": "^4.17.2",
+    "@types/passport": "^1.0.2",
+    "@typescript-eslint/eslint-plugin": "^2.15.0",
+    "@typescript-eslint/parser": "^2.15.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.3",
@@ -35,10 +39,12 @@
     "chai": "^4.2.0",
     "chai-passport-strategy": "^1.0.1",
     "eslint": "^6.8.0",
+    "eslint-config-typescript": "^3.0.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "mocha": "^6.2.2",
-    "sinon": "^8.0.1"
+    "sinon": "^8.0.1",
+    "typescript": "^3.7.4"
   },
   "lint-staged": {
     "*.js": [
