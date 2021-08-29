@@ -1,2 +1,11 @@
+.husky
 src
 test
+.babelrc
+.eslintrc
+.gitignore
+.lintstagedrc
+package.json
+README.md
+tsconfig.json
+yarn.lock
