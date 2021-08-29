@@ -1,2 +1,7 @@
 src
 test
+.babelrc
+.eslintrc
+tsconfig.json
+.husky
+.lintstagedrc
