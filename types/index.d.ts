@@ -24,13 +24,11 @@ declare namespace PassportGoogleOauthToken {
       middleName?: string;
       familyName: string;
     };
-    photos: [{ value: string }];
-    emails: [
-      {
-        value: string;
-        verified: boolean;
-      }
-    ];
+    photos: ValueObject[];
+    emails: {
+      value: string;
+      verified: boolean;
+    }[];
     displayName: string;
 
     _raw: string;
