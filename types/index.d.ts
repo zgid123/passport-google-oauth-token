@@ -50,9 +50,11 @@ declare namespace PassportGoogleOauthToken {
     passReqToCallback: true;
   }
 
-  type VerifyFunction = (accessToken: string, refreshToken: string, profile: Profile, cb: (error: any, user?: any, info?: any) => void) => void;
+  type VerifyCallback = (error: any, user?: any, info?: any) => void;
 
-  type VerifyFunctionWithRequest = (req: express.Request, accessToken: string, refreshToken: string, profile: Profile, cb: (error: any, user?: any, info?: any) => void) => void;
+  type VerifyFunction = (accessToken: string, refreshToken: string, profile: Profile, cb: VerifyCallback) => void;
+
+  type VerifyFunctionWithRequest = (req: express.Request, accessToken: string, refreshToken: string, profile: Profile, cb: VerifyCallback) => void;
 }
 
 declare const PassportGoogleOauthToken: PassportGoogleOauthToken.StrategyStatic;

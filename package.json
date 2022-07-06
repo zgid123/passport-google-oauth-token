@@ -1,6 +1,6 @@
 {
   "name": "passport-google-oauth-token",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Google access token authentication strategy for Passport",
   "keywords": [
     "passport",

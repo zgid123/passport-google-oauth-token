@@ -36,12 +36,6 @@
       "error",
       "always-multiline"
     ],
-    "no-unused-vars": [
-      "error",
-      {
-        "argsIgnorePattern": "^_"
-      }
-    ],
     "global-require": "off",
     "indent": [
       "error",
