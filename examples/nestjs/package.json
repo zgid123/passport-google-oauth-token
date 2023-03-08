@@ -1,0 +1,34 @@
+{
+  "name": "nestjs",
+  "version": "0.0.1",
+  "description": "Example passport-google-oauth-token for NestJS",
+  "author": "Alpha",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "nest build",
+    "start": "nest start",
+    "dev": "nest start --watch"
+  },
+  "dependencies": {
+    "@nestjs/common": "^9.0.0",
+    "@nestjs/core": "^9.0.0",
+    "@nestjs/passport": "^9.0.3",
+    "@nestjs/platform-express": "^9.0.0",
+    "dotenv": "^16.0.3",
+    "passport": "^0.6.0",
+    "passport-google-oauth-token": "workspace:^1.0.5",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.2.0"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^9.0.0",
+    "@nestjs/schematics": "^9.0.0",
+    "@types/express": "^4.17.13",
+    "@types/node": "18.14.6",
+    "source-map-support": "^0.5.20",
+    "ts-loader": "^9.2.3",
+    "ts-node": "^10.0.0",
+    "tsconfig-paths": "4.1.2"
+  }
+}

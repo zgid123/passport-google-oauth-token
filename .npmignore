@@ -1,11 +1,8 @@
-.husky
 src
-test
-.babelrc
-.eslintrc
-.gitignore
-.lintstagedrc
-package.json
-README.md
+.eslintrc.json
 tsconfig.json
-yarn.lock
+pnpm-lock.yaml
+pnpm-workspace.yaml
+.husky
+.lintstagedrc
+.prettierrc
