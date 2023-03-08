@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "esModuleInterop": true,
+    "outDir": "./lib"
+  },
+  "include": [
+    "./src",
+  ],
+  "exclude": [
+    "./lib",
+    "./src/__tests__",
+    "./node_modules"
+  ]
+}

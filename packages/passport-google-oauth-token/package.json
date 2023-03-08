@@ -1,0 +1,41 @@
+{
+  "name": "passport-google-oauth-token",
+  "version": "1.0.5",
+  "description": "Google access token authentication strategy for Passport",
+  "author": "Alpha",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zgid123/passport-google-oauth-token.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "passport",
+    "google",
+    "auth",
+    "authn",
+    "authentication",
+    "identity"
+  ],
+  "directories": {
+    "lib": "lib"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "prepublish": "rm -rf lib && tsc",
+    "test": "jest --config jest.config.json",
+    "update-packages": "pnpm update -i -r --latest"
+  },
+  "dependencies": {
+    "passport-oauth2": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.4.0",
+    "@types/oauth": "^0.9.1",
+    "@types/passport-oauth2": "^1.4.12",
+    "jest": "^29.5.0",
+    "oauth": "^0.10.0",
+    "ts-jest": "^29.0.5"
+  }
+}
