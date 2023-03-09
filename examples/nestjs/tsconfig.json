@@ -2,6 +2,7 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
+    "baseUrl": "src",
     "declaration": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
@@ -15,6 +16,7 @@
     "noFallthroughCasesInSwitch": false,
     "noImplicitAny": false,
     "noUncheckedIndexedAccess": true,
+    "outDir": "dist",
     "removeComments": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
@@ -23,5 +25,8 @@
     "strictBindCallApply": false,
     "strictNullChecks": false,
     "target": "esnext"
-  }
+  },
+  "include": [
+    "./src"
+  ]
 }
