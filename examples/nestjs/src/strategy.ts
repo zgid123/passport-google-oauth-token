@@ -38,7 +38,7 @@ export class GoogleWithPhoneNumberStrategy extends PassportStrategy(
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_SECRET,
       profileURL:
-        'https://people.googleapis.com/v1/people/me?personFields=phoneNumbers,emailAddresses,photos',
+        'https://people.googleapis.com/v1/people/me?personFields=phoneNumbers,emailAddresses,photos,names',
       scope: [
         'email',
         'profile',
