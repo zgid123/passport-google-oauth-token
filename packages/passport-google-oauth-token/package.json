@@ -1,6 +1,6 @@
 {
   "name": "passport-google-oauth-token",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Google access token authentication strategy for Passport",
   "author": "Alpha",
   "repository": {
@@ -19,23 +19,29 @@
   "directories": {
     "lib": "lib"
   },
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "./lib/index.cjs",
+  "module": "./lib/index.mjs",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.cjs",
+      "types": "./lib/index.d.ts"
+    }
+  },
   "scripts": {
-    "prepublish": "rm -rf lib && tsc",
-    "test": "jest --config jest.config.json",
-    "update-packages": "pnpm update -i -r --latest"
+    "prepublish": "pnpm build",
+    "build": "rollup --config rollup.config.ts --configPlugin typescript",
+    "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
     "passport-oauth2": "^1.7.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
-    "@types/jest": "^29.4.0",
     "@types/oauth": "^0.9.1",
     "@types/passport-oauth2": "^1.4.12",
-    "jest": "^29.5.0",
     "oauth": "^0.10.0",
-    "ts-jest": "^29.0.5"
+    "vitest": "^0.29.8"
   }
 }

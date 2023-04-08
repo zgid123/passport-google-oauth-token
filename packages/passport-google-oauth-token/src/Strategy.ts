@@ -1,11 +1,13 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import OAuth2Strategy from 'passport-oauth2';
 
-import { InternalOAuthError } from 'passport-oauth2';
+import {
+  InternalOAuthError,
+  type VerifyFunctionWithRequest as POVerifyFunctionWithRequest,
+} from 'passport-oauth2';
 
 import type { OAuth2 } from 'oauth';
 import type { Request } from 'express';
-import type { VerifyFunctionWithRequest as POVerifyFunctionWithRequest } from 'passport-oauth2';
 
 import type {
   Profile,

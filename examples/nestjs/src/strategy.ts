@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import Strategy from 'passport-google-oauth-token';
 import { PassportStrategy } from '@nestjs/passport';
-
-import type { Profile, VerifyCallback } from 'passport-google-oauth-token';
+import Strategy, {
+  type Profile,
+  type VerifyCallback,
+} from 'passport-google-oauth-token';
 
 import type { IGoogleUserProps, IProfileProps } from 'interface';
 

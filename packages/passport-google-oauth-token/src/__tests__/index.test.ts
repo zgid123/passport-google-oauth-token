@@ -1,3 +1,5 @@
+import { describe, it, expect, vi } from 'vitest';
+
 import userinfo from './fixtures/userinfo.json';
 import GoogleOauthTokenStrategy from '../Strategy';
 
@@ -135,18 +137,18 @@ describe('GoogleOauthTokenStrategy#init', () => {
 });
 
 describe('GoogleOauthTokenStrategy#userProfile', () => {
-  it('should properly fetch profile', (done) => {
+  it('should properly fetch profile', ({ onTestFailed }) => {
     const strategy = initStrategy();
 
-    jest
-      .spyOn(strategy.oauth2Instance, 'get')
-      .mockImplementation((_url, _accessToken, next) => {
+    vi.spyOn(strategy.oauth2Instance, 'get').mockImplementation(
+      (_url, _accessToken, next) => {
         next(null as any, userinfo as any, null as any);
-      });
+      },
+    );
 
     strategy.userProfile(defaultAccessToken, (error, profile) => {
       if (error) {
-        return done(error);
+        return onTestFailed(error);
       }
 
       expect(profile.provider).toEqual('google');
@@ -159,49 +161,43 @@ describe('GoogleOauthTokenStrategy#userProfile', () => {
       expect(typeof profile._raw).toEqual('object');
       expect(typeof profile._json).toEqual('object');
 
-      jest.clearAllMocks();
-
-      done();
+      vi.clearAllMocks();
     });
   });
 
-  it('should properly handle exception on fetching profile', (done) => {
+  it('should properly handle exception on fetching profile', () => {
     const strategy = initStrategy();
 
-    jest
-      .spyOn(strategy.oauth2Instance, 'get')
-      .mockImplementation((_url, _accessToken, next) => {
+    vi.spyOn(strategy.oauth2Instance, 'get').mockImplementation(
+      (_url, _accessToken, next) => {
         next(null as any, 'not a JSON');
-      });
+      },
+    );
 
     strategy.userProfile(defaultAccessToken, (error, profile) => {
       expect(error instanceof SyntaxError).toEqual(true);
       expect(profile).toBeUndefined();
 
-      jest.clearAllMocks();
-
-      done();
+      vi.clearAllMocks();
     });
   });
 
-  it('should properly throw error on _oauth2.get error', (done) => {
+  it('should properly throw error on _oauth2.get error', () => {
     const strategy = initStrategy();
 
-    jest
-      .spyOn(strategy.oauth2Instance, 'get')
-      .mockImplementation((_url, _accessToken, next) => {
+    vi.spyOn(strategy.oauth2Instance, 'get').mockImplementation(
+      (_url, _accessToken, next) => {
         next({
           statusCode: 401,
           data: 'Some error occurred',
         });
-      });
+      },
+    );
 
     strategy.userProfile(defaultAccessToken, (error, _profile) => {
       expect(error instanceof Error).toEqual(true);
 
-      jest.clearAllMocks();
-
-      done();
+      vi.clearAllMocks();
     });
   });
 });
