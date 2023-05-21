@@ -175,11 +175,26 @@ export default class GoogleOauthTokenStrategy extends OAuth2Strategy {
     });
   }
 
+  protected _lookupAuthorization(req: Request): string {
+    if (!req.headers?.authorization) {
+      return '';
+    }
+
+    const matches = req.headers.authorization.match(/(\S+)\s+(\S+)/);
+
+    if (matches?.[1].toLowerCase() !== 'bearer') {
+      return '';
+    }
+
+    return matches?.[2] || '';
+  }
+
   protected _lookup(req: Request, field: string): string {
     return (
       (req.body && req.body[field]) ||
       (req.query && req.query[field]) ||
-      (req.headers && req.headers[field])
+      (req.headers && req.headers[field]) ||
+      this._lookupAuthorization(req)
     );
   }
 

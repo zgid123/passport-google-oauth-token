@@ -1,6 +1,6 @@
 {
   "name": "passport-google-oauth-token",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Google access token authentication strategy for Passport",
   "author": "Alpha",
   "repository": {
@@ -42,6 +42,6 @@
     "@types/oauth": "^0.9.1",
     "@types/passport-oauth2": "^1.4.12",
     "oauth": "^0.10.0",
-    "vitest": "^0.29.8"
+    "vitest": "^0.31.1"
   }
 }
